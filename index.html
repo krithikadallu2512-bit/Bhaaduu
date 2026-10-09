@@ -1229,6 +1229,60 @@ button:active,
     }
 }
 
+
+/* DEFINITIVE BUTTON COLOR FIX — keep every button filled solid white */
+html body button,
+html body button:hover,
+html body button:focus,
+html body button:focus-visible,
+html body button:active,
+html body button:visited,
+html body #secretLoveButton,
+html body #surpriseMessage button {
+    background: #fff !important;
+    background-color: #fff !important;
+    background-image: none !important;
+    color: #3b0718 !important;
+    -webkit-text-fill-color: #3b0718 !important;
+    border: 2px solid #fff !important;
+    border-radius: 18px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    box-shadow: 0 4px 15px rgba(255,255,255,.25) !important;
+    mix-blend-mode: normal !important;
+    filter: none !important;
+}
+html body button::before,
+html body button::after {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+
+
+/* FINAL FIX: ALL NAVIGATION AND SURPRISE BUTTONS MUST BE SOLID WHITE */
+button,
+button:link,
+button:visited,
+button:hover,
+button:focus,
+button:focus-visible,
+button:active,
+#secretLoveButton,
+#secretLoveButton:hover,
+#secretLoveButton:focus,
+#secretLoveButton:active {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
+    color: #3b0718 !important;
+    -webkit-text-fill-color: #3b0718 !important;
+    border: 2px solid #ffffff !important;
+    border-radius: 18px !important;
+    box-shadow: 0 4px 15px rgba(255,255,255,0.25) !important;
+    opacity: 1 !important;
+    filter: none !important;
+}
 </style>
 
 </head>
