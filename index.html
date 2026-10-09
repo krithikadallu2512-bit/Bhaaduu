@@ -2017,35 +2017,34 @@
         }
 
     }
-function showLastSurprise() {
 
-    // Start heart explosion
+function showLastSurprise() {
+    const overlay = document.getElementById("secretOverlay");
+    const intro = document.getElementById("finalIntro");
+    const surprise = document.getElementById("surpriseMessage");
+
+    if (!overlay || !intro || !surprise) {
+        alert("Surprise elements missing!");
+        return;
+    }
+
     heartExplosion();
 
-    // Black cinematic screen
-    const overlay = document.getElementById("secretOverlay");
-
+    overlay.style.display = "flex";
     overlay.classList.add("show");
 
-    // Wait...
     setTimeout(() => {
-
-        // Hide black screen
+        overlay.classList.remove("show");
         overlay.style.display = "none";
 
-        // Show the actual surprise
-        const surprise =
-            document.getElementById("surpriseMessage");
-
+        intro.style.display = "none";
         surprise.style.display = "block";
 
-        surprise.scrollIntoView({
-            behavior: "smooth",
-            block: "center"
+        window.scrollTo({
+            top: document.getElementById("final").offsetTop,
+            behavior: "smooth"
         });
-
     }, 3000);
-
 }
 let secretHeartCount = 0;
 
