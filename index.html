@@ -946,29 +946,16 @@ button {
 }
 .story-card,
 .love-card,
-.letter-box,
-.content-box {
-    border: 1.5px solid rgba(255,255,255,0.42) !important;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.24) !important;
-}
-```css
-/* KEEP BORDERS ON INDIVIDUAL CARDS ONLY */
-.story-card,
-.love-card,
 .letter-box {
     border: 1.5px solid rgba(255,255,255,0.42) !important;
     box-shadow: 0 8px 24px rgba(0,0,0,0.24) !important;
 }
-
-/* REMOVE THE OVERALL OUTER BOX */
-.content-box {
-    border: none !important;
-    outline: none !important;
-    box-shadow: none !important;
-    background: transparent !important;
+.story-card,
+.love-card,
+.letter-box {
+    background: rgba(35, 12, 20, 0.88) !important;
+    border-radius: 20px !important;
 }
-```
-
 .story-card,
 .love-card {
     padding: 24px 20px !important;
@@ -1052,62 +1039,152 @@ button {
         margin: 28px auto 10px !important;
     }
 }
-        
-/* SOLID WHITE BUTTONS */
-button,
-button:hover,
-button:focus,
-button:active,
-button:visited,
+
+
+/* ===== FINAL TWEAK: NO OUTER BOX + CLEAR LAST BUTTON ===== */
+.page,
+#final {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+}
+.page::before,
+.page::after,
+#final::before,
+#final::after {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
 #secretLoveButton {
-    background: #ffffff !important;
-    background-color: #ffffff !important;
-    background-image: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: auto !important;
+    min-width: 210px !important;
+    max-width: calc(100vw - 40px) !important;
+    min-height: 52px !important;
+    margin: 28px auto 12px !important;
+    padding: 14px 24px !important;
     color: #3b0718 !important;
     -webkit-text-fill-color: #3b0718 !important;
+    background: #ffffff !important;
     border: 2px solid #ffffff !important;
-    border-radius: 18px !important;
-    opacity: 1 !important;
-    box-shadow: 0 4px 15px rgba(255,255,255,0.25) !important;
+    border-radius: 999px !important;
+    box-shadow: 0 5px 18px rgba(0,0,0,.28) !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    line-height: 1.35 !important;
+    text-align: center !important;
+    white-space: normal !important;
+    cursor: pointer !important;
     -webkit-appearance: none !important;
     appearance: none !important;
+    touch-action: manipulation !important;
+}
+@media (max-width: 600px) {
+    #secretLoveButton {
+        min-width: 0 !important;
+        width: auto !important;
+        max-width: calc(100vw - 48px) !important;
+        padding: 14px 20px !important;
+        border-radius: 999px !important;
+    }
 }
 
-#secretLoveButton {
-    padding: 14px 22px !important;
-    font-weight: bold !important;
+
+/* ===== SOLID WHITE BUTTONS ON MOBILE AND AFTER TAPPING ===== */
+button, button:link, button:visited, button:hover, button:focus, button:focus-visible, button:active, button:target {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  background-image: none !important;
+  color: #3b0718 !important;
+  -webkit-text-fill-color: #3b0718 !important;
+  border: 2px solid #ffffff !important;
+  outline: none !important;
+  opacity: 1 !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
 }
-        
-/* REMOVE THE OVERALL PAGE BOX */
-html,
-body {
-    border: none !important;
-    outline: none !important;
-    box-shadow: none !important;
+button:active {
+  transform: scale(0.98);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.28) !important;
 }
 
-.page,
-.container,
-.main-container,
-.wrapper,
-.content-wrapper {
-    border: none !important;
-    outline: none !important;
-    box-shadow: none !important;
-}
 
-/* Keep individual content readable */
-p {
-    border: none !important;
-    outline: none !important;
+/* FINAL MOBILE POLISH: no enclosing panel, solid white buttons */
+html, body {
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
 }
-
-/* Keep buttons separate and visible */
+#final {
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
+  padding-left: 14px !important;
+  padding-right: 14px !important;
+}
+#final .final-content,
+#final #surpriseMessage {
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  width: 100% !important;
+  max-width: 560px !important;
+}
+#final button,
+#secretLoveButton,
 button {
-    background-color: #ffffff !important;
-    color: #3b0718 !important;
-    border: 2px solid #ffffff !important;
-    border-radius: 18px !important;
+  background: #fff !important;
+  background-color: #fff !important;
+  background-image: none !important;
+  color: #2b0613 !important;
+  -webkit-text-fill-color: #2b0613 !important;
+  border: 2px solid #fff !important;
+  border-radius: 999px !important;
+  opacity: 1 !important;
+  box-shadow: 0 5px 16px rgba(255,255,255,.16) !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+}
+#final button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 48px !important;
+  padding: 13px 22px !important;
+  font-weight: 700 !important;
+}
+#secretLoveButton {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 50px !important;
+  padding: 14px 22px !important;
+  font-weight: 700 !important;
+}
+@media (max-width: 600px) {
+  #final { min-height: 100svh !important; }
+  #final #surpriseMessage { padding: 18px 8px !important; }
+  #final button, #secretLoveButton {
+    max-width: calc(100vw - 44px) !important;
+    white-space: normal !important;
+    line-height: 1.35 !important;
+  }
+}
+
+/* FINAL FIX: remove only the page-wide outer frame */
+.content-box {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
 }
 
 </style>
@@ -1370,14 +1447,14 @@ button {
 
 
             <!-- =========================
-                 CHAPTER 08
+                 CHAPTER 06
                  MOVED HERE
             ========================== -->
 
             <div class="story-card">
 
                 <div class="chapter">
-                    Chapter 08
+                    Chapter 06
                 </div>
 
                 <h2>
@@ -1439,14 +1516,14 @@ button {
 
 
             <!-- =========================
-                 CHAPTER 09
+                 CHAPTER 07
                  MOVED HERE
             ========================== -->
 
             <div class="story-card">
 
                 <div class="chapter">
-                    Chapter 09
+                    Chapter 07
                 </div>
 
                 <h2>
@@ -1528,14 +1605,14 @@ button {
 
 
             <!-- =========================
-                 CHAPTER 06
+                 CHAPTER 08
                  MOVED HERE
             ========================== -->
 
             <div class="story-card">
 
                 <div class="chapter">
-                    Chapter 06
+                    Chapter 08
                 </div>
 
                 <h2>
@@ -1589,14 +1666,14 @@ button {
 
 
             <!-- =========================
-                 CHAPTER 07
+                 CHAPTER 09
                  MOVED HERE
             ========================== -->
 
             <div class="story-card">
 
                 <div class="chapter">
-                    Chapter 07
+                    Chapter 09
                 </div>
 
                 <div class="date">
