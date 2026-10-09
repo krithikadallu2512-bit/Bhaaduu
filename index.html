@@ -880,10 +880,12 @@ button:active {
     min-height: 48px !important;
     max-width: 100% !important;
     padding: 14px 24px !important;
-    border: 0 !important;
+    border: 2px solid #ffffff !important;
     border-radius: 999px !important;
-    background: #fff !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
     color: #25000a !important;
+    box-shadow: 0 5px 18px rgba(255,255,255,0.18), 0 2px 8px rgba(0,0,0,0.35) !important;
     font-family: "Segoe UI", Arial, sans-serif !important;
     font-size: 16px !important;
     font-weight: 700 !important;
@@ -937,7 +939,59 @@ button:active {
     max-width: 600px;
     margin: auto;
 }
+/* ===== STRONGER VISIBLE MOBILE CARDS AND BUTTONS ===== */
+button {
+    -webkit-text-fill-color: #25000a !important;
+    text-decoration: none !important;
+}
+.story-card,
+.love-card,
+.letter-box,
+.content-box {
+    border: 1.5px solid rgba(255,255,255,0.42) !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.24) !important;
+}
+.story-card,
+.love-card,
+.letter-box {
+    background: rgba(35, 12, 20, 0.88) !important;
+    border-radius: 20px !important;
+}
+.story-card,
+.love-card {
+    padding: 24px 20px !important;
+    margin-bottom: 18px !important;
+}
+.letter-box {
+    padding: 28px 22px !important;
+    line-height: 1.9 !important;
+}
+.story-container {
+    max-height: none !important;
+    overflow: visible !important;
+}
+
 @media (max-width: 600px) {
+    button,
+    button:visited,
+    button:hover,
+    button:focus,
+    button:active {
+        width: auto !important;
+        min-width: 150px !important;
+        max-width: calc(100vw - 36px) !important;
+        border: 2px solid #ffffff !important;
+        border-radius: 16px !important;
+        padding: 13px 20px !important;
+        white-space: normal !important;
+    }
+    .story-card,
+    .love-card,
+    .letter-box {
+        border: 1.5px solid rgba(255,255,255,0.5) !important;
+        background: rgba(35, 12, 20, 0.92) !important;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.3) !important;
+    }
     .page {
         padding: 28px 14px 40px;
     }
