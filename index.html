@@ -951,12 +951,24 @@ button {
     border: 1.5px solid rgba(255,255,255,0.42) !important;
     box-shadow: 0 8px 24px rgba(0,0,0,0.24) !important;
 }
+```css
+/* KEEP BORDERS ON INDIVIDUAL CARDS ONLY */
 .story-card,
 .love-card,
 .letter-box {
-    background: rgba(35, 12, 20, 0.88) !important;
-    border-radius: 20px !important;
+    border: 1.5px solid rgba(255,255,255,0.42) !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.24) !important;
 }
+
+/* REMOVE THE OVERALL OUTER BOX */
+.content-box {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+```
+
 .story-card,
 .love-card {
     padding: 24px 20px !important;
