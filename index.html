@@ -500,13 +500,20 @@
     align-items: center;
     justify-content: center;
 }
-
-
 .final-content {
     max-width: 750px;
     width: 90%;
     margin: auto;
     text-align: center;
+    position: relative;
+    z-index: 100;
+}
+
+.final-content button {
+    position: relative;
+    z-index: 101;
+    pointer-events: auto;
+    touch-action: manipulation;
 }
 
 .final-heart {
