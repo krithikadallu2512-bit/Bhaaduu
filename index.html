@@ -1187,6 +1187,48 @@ button {
     background: transparent !important;
 }
 
+
+/* ===== FINAL FIX: ALL BUTTONS MUST STAY SOLID WHITE ===== */
+button,
+button:link,
+button:visited,
+button:hover,
+button:focus,
+button:focus-visible,
+button:active,
+#secretLoveButton,
+#surpriseMessage button {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
+    color: #3b0718 !important;
+    -webkit-text-fill-color: #3b0718 !important;
+    border: 2px solid #ffffff !important;
+    border-radius: 18px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    box-shadow: 0 4px 15px rgba(255,255,255,0.25) !important;
+    filter: none !important;
+}
+
+@media (max-width: 600px) {
+    button,
+    button:hover,
+    button:focus,
+    button:active,
+    #secretLoveButton,
+    #surpriseMessage button {
+        background: #ffffff !important;
+        background-color: #ffffff !important;
+        background-image: none !important;
+        color: #3b0718 !important;
+        -webkit-text-fill-color: #3b0718 !important;
+        border: 2px solid #ffffff !important;
+        border-radius: 18px !important;
+        box-shadow: 0 4px 15px rgba(255,255,255,0.25) !important;
+    }
+}
+
 </style>
 
 </head>
