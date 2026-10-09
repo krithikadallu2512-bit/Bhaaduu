@@ -1251,6 +1251,52 @@ button:active {
     background: transparent !important;
 }
 
+
+/* FINAL FIX: FORCE ALL NAVIGATION BUTTONS SOLID WHITE ON MOBILE + DESKTOP */
+button,
+button:link,
+button:visited,
+button:hover,
+button:focus,
+button:active,
+#secretLoveButton,
+#surpriseMessage button {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
+    color: #3b0718 !important;
+    -webkit-text-fill-color: #3b0718 !important;
+    border: 2px solid #ffffff !important;
+    border-radius: 999px !important;
+    box-shadow: 0 4px 15px rgba(255,255,255,0.22) !important;
+    opacity: 1 !important;
+    filter: none !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+}
+
+@media screen and (max-width: 600px) {
+    button,
+    button:link,
+    button:visited,
+    button:hover,
+    button:focus,
+    button:active,
+    #secretLoveButton,
+    #surpriseMessage button {
+        background: #ffffff !important;
+        background-color: #ffffff !important;
+        background-image: none !important;
+        color: #3b0718 !important;
+        -webkit-text-fill-color: #3b0718 !important;
+        border: 2px solid #ffffff !important;
+        border-radius: 999px !important;
+        box-shadow: 0 4px 15px rgba(255,255,255,0.22) !important;
+        opacity: 1 !important;
+        filter: none !important;
+    }
+}
+
 </style>
 
 </head>
