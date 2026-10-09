@@ -827,6 +827,28 @@
     appearance: none;
     touch-action: manipulation;
 }
+        button,
+button:focus,
+button:active {
+    display: inline-block !important;
+    padding: 14px 28px !important;
+    background-color: #ffffff !important;
+    color: #170006 !important;
+    border: none !important;
+    border-radius: 30px !important;
+    font-family: "Segoe UI", sans-serif !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    touch-action: manipulation;
+}
+
+button {
+    position: relative;
+    z-index: 1000;
+}
 </style>
 
 </head>
