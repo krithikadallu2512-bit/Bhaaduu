@@ -2021,27 +2021,15 @@
 function showLastSurprise() {
     const intro = document.getElementById("finalIntro");
     const surprise = document.getElementById("surpriseMessage");
-    const overlay = document.getElementById("secretOverlay");
 
-    if (!intro || !surprise || !overlay) {
-        alert("Something is missing!");
+    if (!intro || !surprise) {
+        alert("Surprise not found!");
         return;
     }
 
-    heartExplosion();
-
-    overlay.style.display = "flex";
-    overlay.classList.add("show");
-
-    setTimeout(function () {
-        overlay.classList.remove("show");
-        overlay.style.display = "none";
-
-        intro.style.display = "none";
-        surprise.style.display = "block";
-
-        window.scrollTo(0, 0);
-    }, 2500);
+    intro.style.display = "none";
+    surprise.style.display = "block";
+    window.scrollTo(0, 0);
 }
 
 let secretHeartCount = 0;
