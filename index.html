@@ -849,6 +849,144 @@ button {
     position: relative;
     z-index: 1000;
 }
+
+/* ===== FINAL MOBILE FIXES ===== */
+html, body {
+    width: 100%;
+    min-height: 100%;
+}
+body {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+.page {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+    overflow: visible;
+}
+.page::before,
+.page::after {
+    pointer-events: none;
+}
+button,
+button:visited,
+button:hover,
+button:focus,
+button:active {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 48px !important;
+    max-width: 100% !important;
+    padding: 14px 24px !important;
+    border: 0 !important;
+    border-radius: 999px !important;
+    background: #fff !important;
+    color: #25000a !important;
+    font-family: "Segoe UI", Arial, sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    line-height: 1.35 !important;
+    text-align: center !important;
+    white-space: normal !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    touch-action: manipulation !important;
+    position: relative;
+    z-index: 10000 !important;
+}
+#final {
+    align-items: flex-start;
+    overflow: visible;
+    padding-top: 35px;
+    padding-bottom: 50px;
+}
+.final-content,
+#surpriseMessage {
+    position: relative;
+    z-index: 20;
+}
+#surpriseMessage {
+    display: none;
+    width: min(650px, 100%);
+    margin: 0 auto;
+    padding: 20px 8px 40px;
+    overflow-wrap: anywhere;
+}
+#loveSecret {
+    position: fixed;
+    inset: 0;
+    z-index: 1000000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(0,0,0,.98);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+#loveSecret.show {
+    display: flex;
+}
+.love-secret-content {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}
+@media (max-width: 600px) {
+    .page {
+        padding: 28px 14px 40px;
+    }
+    .content-box {
+        width: 100%;
+    }
+    .love-cards {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+    .story-card {
+        padding: 20px 16px;
+    }
+    .letter-box {
+        padding: 24px 18px;
+        font-size: 16px;
+        overflow-wrap: anywhere;
+    }
+    #final {
+        padding: 28px 14px 45px;
+    }
+    .final-content,
+    #surpriseMessage {
+        width: 100%;
+    }
+    .final-content h1 {
+        font-size: clamp(32px, 9vw, 42px);
+    }
+    .final-question {
+        font-size: clamp(25px, 7vw, 32px);
+    }
+    .final-love {
+        font-size: 21px;
+        margin: 28px 0;
+    }
+    #surpriseMessage h1 {
+        font-size: clamp(40px, 12vw, 52px);
+    }
+    #surpriseMessage h2 {
+        font-size: 27px;
+    }
+    #surpriseMessage p {
+        font-size: 17px;
+    }
+    #secretLoveButton {
+        margin: 28px auto 10px !important;
+    }
+}
+
 </style>
 
 </head>
@@ -1869,7 +2007,7 @@ button {
         </p>
 
 <button type="button" id="secretLoveButton"
-    onclick="alert('Button works!')">
+    onclick="showSecretLove()">
     Tap this if you still love me 👀
 </button>
     </div>
@@ -2075,7 +2213,11 @@ function showLastSurprise() {
 
     intro.style.display = "none";
     surprise.style.display = "block";
-    window.scrollTo(0, 0);
+    surprise.style.visibility = "visible";
+    surprise.style.opacity = "1";
+    requestAnimationFrame(() => {
+        window.scrollTo({ top: 0, behavior: "auto" });
+    });
 }
 
 let secretHeartCount = 0;
@@ -2100,10 +2242,11 @@ function closeEasterEgg() {
 
 function showSecretLove() {
     const secret = document.getElementById("loveSecret");
-
-    if (secret) {
-        secret.classList.add("show");
+    if (!secret) {
+        alert("One last surprise is missing. Please refresh the page.");
+        return;
     }
+    secret.classList.add("show");
 }
 </script>
 <div id="secretOverlay">
