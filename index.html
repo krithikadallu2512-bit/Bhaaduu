@@ -2019,12 +2019,12 @@
     }
 
 function showLastSurprise() {
-    const overlay = document.getElementById("secretOverlay");
     const intro = document.getElementById("finalIntro");
     const surprise = document.getElementById("surpriseMessage");
+    const overlay = document.getElementById("secretOverlay");
 
-    if (!overlay || !intro || !surprise) {
-        alert("Surprise elements missing!");
+    if (!intro || !surprise || !overlay) {
+        alert("Something is missing!");
         return;
     }
 
@@ -2033,19 +2033,17 @@ function showLastSurprise() {
     overlay.style.display = "flex";
     overlay.classList.add("show");
 
-    setTimeout(() => {
+    setTimeout(function () {
         overlay.classList.remove("show");
         overlay.style.display = "none";
 
         intro.style.display = "none";
         surprise.style.display = "block";
 
-        window.scrollTo({
-            top: document.getElementById("final").offsetTop,
-            behavior: "smooth"
-        });
-    }, 3000);
+        window.scrollTo(0, 0);
+    }, 2500);
 }
+
 let secretHeartCount = 0;
 
 function secretHeartClick() {
