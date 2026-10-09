@@ -808,6 +808,25 @@
 .love-secret-content h2{font-size:32px;margin-bottom:25px}
 .love-secret-content p{font-size:20px;line-height:1.8;margin:15px 0}
 @keyframes loveSecretFade{from{opacity:0}to{opacity:1}}
+        
+#surpriseMessage button {
+    display: inline-block !important;
+    background: #ffffff !important;
+    color: #25000a !important;
+    border: none !important;
+    border-radius: 30px !important;
+    padding: 15px 24px !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    margin: 25px auto !important;
+    min-height: 48px;
+    cursor: pointer;
+    position: relative;
+    z-index: 9999;
+    -webkit-appearance: none;
+    appearance: none;
+    touch-action: manipulation;
+}
 </style>
 
 </head>
@@ -1826,7 +1845,9 @@
         <p class="signature">
             — Your kuchii Pachoo🫀
         </p>
-<button onclick="alert('Secret button works!')">
+
+<button type="button" id="secretLoveButton"
+    onclick="showSecretLove()">
     Tap this if you still love me 👀
 </button>
     </div>
@@ -2057,9 +2078,9 @@ function closeEasterEgg() {
 
 function showSecretLove() {
     const secret = document.getElementById("loveSecret");
-    secret.classList.add("show");
-    for (let i = 0; i < 25; i++) {
-        createFloatingHeart();
+
+    if (secret) {
+        secret.classList.add("show");
     }
 }
 </script>
